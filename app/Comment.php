@@ -10,7 +10,7 @@ class Comment extends Model
         'name', 'content',
     ];
 
-    public function post(){
-        return $this->hasOne('App\Post');
+    public function posts(){
+        return $this->belongsTo('App\Post');
     }
 }

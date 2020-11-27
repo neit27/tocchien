@@ -1,13 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Category;
+
 use App\Social;
-use App\Post;
 use Illuminate\Http\Request;
 
-class HomeController extends SocialController
+class SocialController extends Controller
 {
+    public function getSocial()
+    {
+        $socials = Social::all();
+        $info = [];
+        foreach($socials as $social){
+            $info[$social->name]['id'] = $social->id;
+            $info[$social->name]['name'] = $social->name;
+            $info[$social->name]['link'] = $social->link;
+        }
+        return $info;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,13 +25,7 @@ class HomeController extends SocialController
      */
     public function index()
     {
-        $categories = Category::all();
-        $p_hots = Post::with('categories')->get();
-        $p_news = Post::orderBy('id', 'DESC')->take(5)->get();
-        $p_tocchien = Post::where('category_id', 1)->take(5)->get();
-        $socials = self::getSocial();
-        dd($p_hots);
-        return view('front-end.index', compact('categories', 'socials', 'p_hots', 'p_news', 'p_tocchien'));
+        
     }
 
     /**
@@ -48,10 +52,10 @@ class HomeController extends SocialController
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Social $social)
     {
         //
     }
@@ -59,10 +63,10 @@ class HomeController extends SocialController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Social $social)
     {
         //
     }
@@ -71,10 +75,10 @@ class HomeController extends SocialController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Social $social)
     {
         //
     }
@@ -82,10 +86,10 @@ class HomeController extends SocialController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Social  $social
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Social $social)
     {
         //
     }

@@ -6,17 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //
-    public function category()
+    protected $fillable = [
+        
+    ];
+    public function categories()
     {
     	return $this->belongsTo('App\Category');
     }
-    public function user()
+    public function users()
     {
     	return $this->belongsTo('App\User');
     }
-    public function comment()
+    public function comments()
     {
-    	return $this->belongsTo('App\Category');
+    	return $this->hasMany('App\Comment');
     }
 }

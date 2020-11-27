@@ -12,7 +12,7 @@
             <div class="col-lg-6 col-md-4">
                 <div class="brand-ads">
                     <a href="">
-                    <img src="" alt="Ads">
+                    
                     </a>
                 </div>
             </div>

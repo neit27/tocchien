@@ -11,13 +11,13 @@
                 </ul>
                 <ul class="col-md-3 justify-content-end d-flex">
                     <li class="social">
-                        <a href="https://www.facebook.com/tintocchien.net"><i class="fab fa-facebook-square"></i></a>
+                        <a href="{{$socials['facebook']['link']}}"><i class="fab fa-facebook-square"></i></a>
                     </li>
                     <li class="row social">
-                        <a href="https://www.facebook.com/groups/TocChien.Riot"><i class="fas fa-users"></i></a>
+                        <a href="{{$socials['group']['link']}}"><i class="fas fa-users"></i></a>
                     </li>
                     <li class="row social">
-                        <a href=""><i class="fab fa-youtube-square"></i></a>
+                        <a href="{{$socials['youtube']['link']}}"><i class="fab fa-youtube-square"></i></a>
                     </li>
                 </ul>
             </div>

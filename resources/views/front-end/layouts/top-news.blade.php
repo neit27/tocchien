@@ -2,6 +2,7 @@
 <div class="top-news">
     <div class="container">
         <div class="row news">
+
             <div class="tn-right col-md-8">
                 <a href="">
                     <img src="img/a.jpg" alt="">
@@ -9,7 +10,7 @@
                 <a class="text" href="">
                     <h2>
                         <span class="badge badge-primary">Primary</span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elitolor sit amet consectetur adipisicing olor sit amet consectetur adipisicing . Quidem, eveniet aliquam.
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elitolor sit amet consectetur adipisicing olor sit amet consectetur adipisicing . Quidem, eveniet aliquam.</p> 
                     </h2>
                 </a>
                 
